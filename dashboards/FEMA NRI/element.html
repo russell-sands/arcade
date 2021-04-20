@@ -1,0 +1,1474 @@
+<div style="width: 100%; height:100%; border-right:12px solid #e7e7e7;  font-size:1.3rem; display:flex; flex-direction: column; text-align:center;">
+  <div style = "width:100%; padding:1px; background: #4c4c4c; border-radius: 2px 2px 0 0;">
+    <p style="font-size: 5rem; color: white;"><strong>{county}</strong></p>
+    <p style="font-size: 3rem; color: white;">{state}</p>
+    <br>
+    <div style="width:100%; text-align:left; display:flex; flex-direction:row; justify-content: space-evenly; flex-wrap:wrap; background:#ffffff;">
+      <div style="margin:5px;">
+        <p>&nbsp;</p>
+        <p>Total Population: {population}</p>
+        <p>Building Value: ${buildvalue}</p>
+        <p>Agricultural Value: ${agrivalue}</p>
+        <p>&nbsp;</p>
+      </div>
+      <div style="margin:5px;">
+        <p>&nbsp;</p>
+        <p>Expected Annual Loss: {eal_ratng}</p>
+        <p>Social Vulnerability: {sovi_ratng}</p>
+        <p>Community Resilience: {resl_ratng}</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <p style="padding:4px; font-size:1.7rem; color:#ffffff">The FEMA National Risk Index in this area is</p>
+  </div>
+  <div style="width:100%; display:flex; justify-content:center; align-items:flex-start; flex-direction:row; color:#ffffff;">
+    <div style="border:1px solid #4c4c4c; padding:2px; background-color:#4d6dbd; border-radius:0 0 5px 5px; font-size:{expression/Very Low height}; width:{expression/Very Low width}">
+      <span style="margin:auto">{expression/Very Low label}</span>
+    </div>
+    <div style="border:1px solid #4c4c4c; padding:2px; background-color:#509bc7; border-radius:0 0 5px 5px; font-size:{expression/Relatively Low height}; width:{expression/Relatively Low width}">
+      {expression/Relatively Low label}
+    </div>
+    <div style="border:1px solid #4c4c4c; padding:2px; background-color:#f0d55d; border-radius:0 0 5px 5px; color:black; font-size:{expression/Relatively Moderate height}; width:{expression/Relatively Moderate width}">
+      {expression/Relatively Moderate label}
+    </div>
+    <div style="border:1px solid #4c4c4c; padding:2px; background-color:#e07069; border-radius:0 0 5px 5px; font-size:{expression/Relatively High height}; width:{expression/Relatively High width}">
+      {expression/Relatively High label}
+    </div>
+    <div style="border:1px solid #4c4c4c; padding:2px; background-color:#c7445d; border-radius:0 0 5px 5px; font-size:{expression/Very High height}; width:{expression/Very High width}">
+      {expression/Very High label}
+    </div>
+  </div>
+</div>
+<div style="border-right:12px solid #e7e7e7; border-top:12px solid #e7e7e7; display:flex; align-items: baseline; flex-wrap:wrap; font-size:1.2rem">
+  <div style="background-color:{expression/avln_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/avln_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Avalanche Risk</strong>
+      <div style="display:{expression/avln_riskr_display};">
+        <div style="display:{expression/avln_frqDisplay};">
+          <p>{expression/avln_evnts} recorded events</p>
+          <p>{expression/avln_afreq} {expression/avln_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/avln_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/avln_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/avln_expp}</td>
+        </tr>
+        <tr style="{expression/avln_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/avln_exppe}</td>
+        </tr>
+        <tr style="{expression/avln_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/avln_expb}</td>
+        </tr>
+        <tr style="{expression/avln_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/avln_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/avln_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/avln_hlrp}%</td>
+        </tr>
+        <tr style="{expression/avln_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/avln_hlrb}%</td>
+        </tr>
+        <tr style="{expression/avln_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/avln_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{avln_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/avln_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/avln_ealp}</td>
+        </tr>
+        <tr style="{expression/avln_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/avln_ealpe}</td>
+        </tr>
+        <tr style="{expression/avln_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/avln_ealb}</td>
+        </tr>
+        <tr style="{expression/avln_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/avln_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{avln_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/avln_riskr_color}">
+        <span style="display:{expression/avln_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/avln_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/cfld_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/cfld_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Coastal Flood Risk</strong>
+      <div style="display:{expression/cfld_riskr_display};">
+        <div style="display:{expression/cfld_frqDisplay};">
+          <p>{expression/cfld_evnts} recorded events</p>
+          <p>{expression/cfld_afreq} {expression/cfld_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/cfld_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/cfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/cfld_expp}</td>
+        </tr>
+        <tr style="{expression/cfld_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/cfld_exppe}</td>
+        </tr>
+        <tr style="{expression/cfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/cfld_expb}</td>
+        </tr>
+        <tr style="{expression/cfld_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/cfld_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/cfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/cfld_hlrp}%</td>
+        </tr>
+        <tr style="{expression/cfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/cfld_hlrb}%</td>
+        </tr>
+        <tr style="{expression/cfld_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/cfld_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{cfld_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/cfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/cfld_ealp}</td>
+        </tr>
+        <tr style="{expression/cfld_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/cfld_ealpe}</td>
+        </tr>
+        <tr style="{expression/cfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/cfld_ealb}</td>
+        </tr>
+        <tr style="{expression/cfld_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/cfld_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{cfld_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/cfld_riskr_color}">
+        <span style="display:{expression/cfld_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/cfld_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/cwav_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/cwav_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Cold Wave Risk</strong>
+      <div style="display:{expression/cwav_riskr_display};">
+        <div style="display:{expression/cwav_frqDisplay};">
+          <p>{expression/cwav_evnts} recorded events</p>
+          <p>{expression/cwav_afreq} {expression/cwav_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/cwav_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/cwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/cwav_expp}</td>
+        </tr>
+        <tr style="{expression/cwav_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/cwav_exppe}</td>
+        </tr>
+        <tr style="{expression/cwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/cwav_expb}</td>
+        </tr>
+        <tr style="{expression/cwav_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/cwav_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/cwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/cwav_hlrp}%</td>
+        </tr>
+        <tr style="{expression/cwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/cwav_hlrb}%</td>
+        </tr>
+        <tr style="{expression/cwav_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/cwav_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{cwav_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/cwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/cwav_ealp}</td>
+        </tr>
+        <tr style="{expression/cwav_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/cwav_ealpe}</td>
+        </tr>
+        <tr style="{expression/cwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/cwav_ealb}</td>
+        </tr>
+        <tr style="{expression/cwav_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/cwav_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{cwav_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/cwav_riskr_color}">
+        <span style="display:{expression/cwav_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/cwav_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/drgt_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/drgt_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Drought Risk</strong>
+      <div style="display:{expression/drgt_riskr_display};">
+        <div style="display:{expression/drgt_frqDisplay};">
+          <p>{expression/drgt_evnts} recorded events</p>
+          <p>{expression/drgt_afreq} {expression/drgt_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/drgt_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/drgt_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/drgt_expp}</td>
+        </tr>
+        <tr style="{expression/drgt_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/drgt_exppe}</td>
+        </tr>
+        <tr style="{expression/drgt_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/drgt_expb}</td>
+        </tr>
+        <tr style="{expression/drgt_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/drgt_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/drgt_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/drgt_hlrp}%</td>
+        </tr>
+        <tr style="{expression/drgt_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/drgt_hlrb}%</td>
+        </tr>
+        <tr style="{expression/drgt_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/drgt_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{drgt_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/drgt_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/drgt_ealp}</td>
+        </tr>
+        <tr style="{expression/drgt_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/drgt_ealpe}</td>
+        </tr>
+        <tr style="{expression/drgt_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/drgt_ealb}</td>
+        </tr>
+        <tr style="{expression/drgt_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/drgt_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{drgt_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/drgt_riskr_color}">
+        <span style="display:{expression/drgt_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/drgt_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/erqk_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/erqk_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Earthquake Risk</strong>
+      <div style="display:{expression/erqk_riskr_display};">
+        <div style="display:{expression/erqk_frqDisplay};">
+          <p>{expression/erqk_evnts} recorded events</p>
+          <p>{expression/erqk_afreq} {expression/erqk_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/erqk_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/erqk_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/erqk_expp}</td>
+        </tr>
+        <tr style="{expression/erqk_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/erqk_exppe}</td>
+        </tr>
+        <tr style="{expression/erqk_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/erqk_expb}</td>
+        </tr>
+        <tr style="{expression/erqk_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/erqk_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/erqk_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/erqk_hlrp}%</td>
+        </tr>
+        <tr style="{expression/erqk_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/erqk_hlrb}%</td>
+        </tr>
+        <tr style="{expression/erqk_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/erqk_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{erqk_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/erqk_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/erqk_ealp}</td>
+        </tr>
+        <tr style="{expression/erqk_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/erqk_ealpe}</td>
+        </tr>
+        <tr style="{expression/erqk_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/erqk_ealb}</td>
+        </tr>
+        <tr style="{expression/erqk_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/erqk_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{erqk_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/erqk_riskr_color}">
+        <span style="display:{expression/erqk_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/erqk_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/hail_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/hail_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Hail Risk</strong>
+      <div style="display:{expression/hail_riskr_display};">
+        <div style="display:{expression/hail_frqDisplay};">
+          <p>{expression/hail_evnts} recorded events</p>
+          <p>{expression/hail_afreq} {expression/hail_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/hail_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/hail_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/hail_expp}</td>
+        </tr>
+        <tr style="{expression/hail_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/hail_exppe}</td>
+        </tr>
+        <tr style="{expression/hail_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/hail_expb}</td>
+        </tr>
+        <tr style="{expression/hail_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/hail_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/hail_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/hail_hlrp}%</td>
+        </tr>
+        <tr style="{expression/hail_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/hail_hlrb}%</td>
+        </tr>
+        <tr style="{expression/hail_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/hail_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{hail_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/hail_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/hail_ealp}</td>
+        </tr>
+        <tr style="{expression/hail_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/hail_ealpe}</td>
+        </tr>
+        <tr style="{expression/hail_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/hail_ealb}</td>
+        </tr>
+        <tr style="{expression/hail_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/hail_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{hail_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/hail_riskr_color}">
+        <span style="display:{expression/hail_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/hail_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/hrcn_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/hrcn_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Hurricane Risk</strong>
+      <div style="display:{expression/hrcn_riskr_display};">
+        <div style="display:{expression/hrcn_frqDisplay};">
+          <p>{expression/hrcn_evnts} recorded events</p>
+          <p>{expression/hrcn_afreq} {expression/hrcn_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/hrcn_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/hrcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/hrcn_expp}</td>
+        </tr>
+        <tr style="{expression/hrcn_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/hrcn_exppe}</td>
+        </tr>
+        <tr style="{expression/hrcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/hrcn_expb}</td>
+        </tr>
+        <tr style="{expression/hrcn_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/hrcn_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/hrcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/hrcn_hlrp}%</td>
+        </tr>
+        <tr style="{expression/hrcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/hrcn_hlrb}%</td>
+        </tr>
+        <tr style="{expression/hrcn_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/hrcn_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{hrcn_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/hrcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/hrcn_ealp}</td>
+        </tr>
+        <tr style="{expression/hrcn_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/hrcn_ealpe}</td>
+        </tr>
+        <tr style="{expression/hrcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/hrcn_ealb}</td>
+        </tr>
+        <tr style="{expression/hrcn_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/hrcn_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{hrcn_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/hrcn_riskr_color}">
+        <span style="display:{expression/hrcn_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/hrcn_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/hwav_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/hwav_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Heat Wave Risk</strong>
+      <div style="display:{expression/hwav_riskr_display};">
+        <div style="display:{expression/hwav_frqDisplay};">
+          <p>{expression/hwav_evnts} recorded events</p>
+          <p>{expression/hwav_afreq} {expression/hwav_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/hwav_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/hwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/hwav_expp}</td>
+        </tr>
+        <tr style="{expression/hwav_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/hwav_exppe}</td>
+        </tr>
+        <tr style="{expression/hwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/hwav_expb}</td>
+        </tr>
+        <tr style="{expression/hwav_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/hwav_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/hwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/hwav_hlrp}%</td>
+        </tr>
+        <tr style="{expression/hwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/hwav_hlrb}%</td>
+        </tr>
+        <tr style="{expression/hwav_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/hwav_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{hwav_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/hwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/hwav_ealp}</td>
+        </tr>
+        <tr style="{expression/hwav_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/hwav_ealpe}</td>
+        </tr>
+        <tr style="{expression/hwav_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/hwav_ealb}</td>
+        </tr>
+        <tr style="{expression/hwav_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/hwav_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{hwav_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/hwav_riskr_color}">
+        <span style="display:{expression/hwav_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/hwav_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/istm_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/istm_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Ice Storm Risk</strong>
+      <div style="display:{expression/istm_riskr_display};">
+        <div style="display:{expression/istm_frqDisplay};">
+          <p>{expression/istm_evnts} recorded events</p>
+          <p>{expression/istm_afreq} {expression/istm_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/istm_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/istm_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/istm_expp}</td>
+        </tr>
+        <tr style="{expression/istm_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/istm_exppe}</td>
+        </tr>
+        <tr style="{expression/istm_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/istm_expb}</td>
+        </tr>
+        <tr style="{expression/istm_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/istm_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/istm_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/istm_hlrp}%</td>
+        </tr>
+        <tr style="{expression/istm_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/istm_hlrb}%</td>
+        </tr>
+        <tr style="{expression/istm_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/istm_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{istm_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/istm_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/istm_ealp}</td>
+        </tr>
+        <tr style="{expression/istm_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/istm_ealpe}</td>
+        </tr>
+        <tr style="{expression/istm_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/istm_ealb}</td>
+        </tr>
+        <tr style="{expression/istm_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/istm_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{istm_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/istm_riskr_color}">
+        <span style="display:{expression/istm_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/istm_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/lnds_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/lnds_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Landslide Risk</strong>
+      <div style="display:{expression/lnds_riskr_display};">
+        <div style="display:{expression/lnds_frqDisplay};">
+          <p>{expression/lnds_evnts} recorded events</p>
+          <p>{expression/lnds_afreq} {expression/lnds_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/lnds_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/lnds_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/lnds_expp}</td>
+        </tr>
+        <tr style="{expression/lnds_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/lnds_exppe}</td>
+        </tr>
+        <tr style="{expression/lnds_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/lnds_expb}</td>
+        </tr>
+        <tr style="{expression/lnds_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/lnds_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/lnds_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/lnds_hlrp}%</td>
+        </tr>
+        <tr style="{expression/lnds_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/lnds_hlrb}%</td>
+        </tr>
+        <tr style="{expression/lnds_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/lnds_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{lnds_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/lnds_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/lnds_ealp}</td>
+        </tr>
+        <tr style="{expression/lnds_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/lnds_ealpe}</td>
+        </tr>
+        <tr style="{expression/lnds_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/lnds_ealb}</td>
+        </tr>
+        <tr style="{expression/lnds_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/lnds_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{lnds_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/lnds_riskr_color}">
+        <span style="display:{expression/lnds_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/lnds_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/wntw_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/wntw_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Winter Weather Risk</strong>
+      <div style="display:{expression/wntw_riskr_display};">
+        <div style="display:{expression/wntw_frqDisplay};">
+          <p>{expression/wntw_evnts} recorded events</p>
+          <p>{expression/wntw_afreq} {expression/wntw_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/wntw_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/wntw_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/wntw_expp}</td>
+        </tr>
+        <tr style="{expression/wntw_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/wntw_exppe}</td>
+        </tr>
+        <tr style="{expression/wntw_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/wntw_expb}</td>
+        </tr>
+        <tr style="{expression/wntw_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/wntw_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/wntw_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/wntw_hlrp}%</td>
+        </tr>
+        <tr style="{expression/wntw_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/wntw_hlrb}%</td>
+        </tr>
+        <tr style="{expression/wntw_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/wntw_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{wntw_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/wntw_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/wntw_ealp}</td>
+        </tr>
+        <tr style="{expression/wntw_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/wntw_ealpe}</td>
+        </tr>
+        <tr style="{expression/wntw_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/wntw_ealb}</td>
+        </tr>
+        <tr style="{expression/wntw_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/wntw_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{wntw_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/wntw_riskr_color}">
+        <span style="display:{expression/wntw_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/wntw_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/ltng_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/ltng_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Lightning Risk</strong>
+      <div style="display:{expression/ltng_riskr_display};">
+        <div style="display:{expression/ltng_frqDisplay};">
+          <p>{expression/ltng_evnts} recorded events</p>
+          <p>{expression/ltng_afreq} {expression/ltng_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/ltng_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/ltng_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/ltng_expp}</td>
+        </tr>
+        <tr style="{expression/ltng_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/ltng_exppe}</td>
+        </tr>
+        <tr style="{expression/ltng_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/ltng_expb}</td>
+        </tr>
+        <tr style="{expression/ltng_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/ltng_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/ltng_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/ltng_hlrp}%</td>
+        </tr>
+        <tr style="{expression/ltng_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/ltng_hlrb}%</td>
+        </tr>
+        <tr style="{expression/ltng_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/ltng_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{ltng_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/ltng_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/ltng_ealp}</td>
+        </tr>
+        <tr style="{expression/ltng_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/ltng_ealpe}</td>
+        </tr>
+        <tr style="{expression/ltng_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/ltng_ealb}</td>
+        </tr>
+        <tr style="{expression/ltng_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/ltng_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{ltng_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/ltng_riskr_color}">
+        <span style="display:{expression/ltng_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/ltng_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/rfld_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/rfld_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Riverine Flood Risk</strong>
+      <div style="display:{expression/rfld_riskr_display};">
+        <div style="display:{expression/rfld_frqDisplay};">
+          <p>{expression/rfld_evnts} recorded events</p>
+          <p>{expression/rfld_afreq} {expression/rfld_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/rfld_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/rfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/rfld_expp}</td>
+        </tr>
+        <tr style="{expression/rfld_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/rfld_exppe}</td>
+        </tr>
+        <tr style="{expression/rfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/rfld_expb}</td>
+        </tr>
+        <tr style="{expression/rfld_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/rfld_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/rfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/rfld_hlrp}%</td>
+        </tr>
+        <tr style="{expression/rfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/rfld_hlrb}%</td>
+        </tr>
+        <tr style="{expression/rfld_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/rfld_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{rfld_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/rfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/rfld_ealp}</td>
+        </tr>
+        <tr style="{expression/rfld_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/rfld_ealpe}</td>
+        </tr>
+        <tr style="{expression/rfld_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/rfld_ealb}</td>
+        </tr>
+        <tr style="{expression/rfld_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/rfld_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{rfld_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/rfld_riskr_color}">
+        <span style="display:{expression/rfld_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/rfld_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/swnd_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/swnd_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Strong Wind Risk</strong>
+      <div style="display:{expression/swnd_riskr_display};">
+        <div style="display:{expression/swnd_frqDisplay};">
+          <p>{expression/swnd_evnts} recorded events</p>
+          <p>{expression/swnd_afreq} {expression/swnd_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/swnd_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/swnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/swnd_expp}</td>
+        </tr>
+        <tr style="{expression/swnd_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/swnd_exppe}</td>
+        </tr>
+        <tr style="{expression/swnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/swnd_expb}</td>
+        </tr>
+        <tr style="{expression/swnd_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/swnd_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/swnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/swnd_hlrp}%</td>
+        </tr>
+        <tr style="{expression/swnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/swnd_hlrb}%</td>
+        </tr>
+        <tr style="{expression/swnd_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/swnd_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{swnd_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/swnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/swnd_ealp}</td>
+        </tr>
+        <tr style="{expression/swnd_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/swnd_ealpe}</td>
+        </tr>
+        <tr style="{expression/swnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/swnd_ealb}</td>
+        </tr>
+        <tr style="{expression/swnd_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/swnd_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{swnd_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/swnd_riskr_color}">
+        <span style="display:{expression/swnd_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/swnd_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/trnd_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/trnd_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Tornado Risk</strong>
+      <div style="display:{expression/trnd_riskr_display};">
+        <div style="display:{expression/trnd_frqDisplay};">
+          <p>{expression/trnd_evnts} recorded events</p>
+          <p>{expression/trnd_afreq} {expression/trnd_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/trnd_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/trnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/trnd_expp}</td>
+        </tr>
+        <tr style="{expression/trnd_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/trnd_exppe}</td>
+        </tr>
+        <tr style="{expression/trnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/trnd_expb}</td>
+        </tr>
+        <tr style="{expression/trnd_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/trnd_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/trnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/trnd_hlrp}%</td>
+        </tr>
+        <tr style="{expression/trnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/trnd_hlrb}%</td>
+        </tr>
+        <tr style="{expression/trnd_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/trnd_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{trnd_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/trnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/trnd_ealp}</td>
+        </tr>
+        <tr style="{expression/trnd_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/trnd_ealpe}</td>
+        </tr>
+        <tr style="{expression/trnd_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/trnd_ealb}</td>
+        </tr>
+        <tr style="{expression/trnd_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/trnd_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{trnd_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/trnd_riskr_color}">
+        <span style="display:{expression/trnd_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/trnd_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/tsun_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/tsun_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Tsunami Risk</strong>
+      <div style="display:{expression/tsun_riskr_display};">
+        <div style="display:{expression/tsun_frqDisplay};">
+          <p>{expression/tsun_evnts} recorded events</p>
+          <p>{expression/tsun_afreq} {expression/tsun_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/tsun_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/tsun_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/tsun_expp}</td>
+        </tr>
+        <tr style="{expression/tsun_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/tsun_exppe}</td>
+        </tr>
+        <tr style="{expression/tsun_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/tsun_expb}</td>
+        </tr>
+        <tr style="{expression/tsun_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/tsun_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/tsun_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/tsun_hlrp}%</td>
+        </tr>
+        <tr style="{expression/tsun_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/tsun_hlrb}%</td>
+        </tr>
+        <tr style="{expression/tsun_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/tsun_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{tsun_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/tsun_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/tsun_ealp}</td>
+        </tr>
+        <tr style="{expression/tsun_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/tsun_ealpe}</td>
+        </tr>
+        <tr style="{expression/tsun_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/tsun_ealb}</td>
+        </tr>
+        <tr style="{expression/tsun_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/tsun_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{tsun_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/tsun_riskr_color}">
+        <span style="display:{expression/tsun_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/tsun_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/vlcn_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/vlcn_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Volcano Risk</strong>
+      <div style="display:{expression/vlcn_riskr_display};">
+        <div style="display:{expression/vlcn_frqDisplay};">
+          <p>{expression/vlcn_evnts} recorded events</p>
+          <p>{expression/vlcn_afreq} {expression/vlcn_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/vlcn_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/vlcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/vlcn_expp}</td>
+        </tr>
+        <tr style="{expression/vlcn_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/vlcn_exppe}</td>
+        </tr>
+        <tr style="{expression/vlcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/vlcn_expb}</td>
+        </tr>
+        <tr style="{expression/vlcn_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/vlcn_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/vlcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/vlcn_hlrp}%</td>
+        </tr>
+        <tr style="{expression/vlcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/vlcn_hlrb}%</td>
+        </tr>
+        <tr style="{expression/vlcn_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/vlcn_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{vlcn_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/vlcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/vlcn_ealp}</td>
+        </tr>
+        <tr style="{expression/vlcn_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/vlcn_ealpe}</td>
+        </tr>
+        <tr style="{expression/vlcn_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/vlcn_ealb}</td>
+        </tr>
+        <tr style="{expression/vlcn_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/vlcn_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{vlcn_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/vlcn_riskr_color}">
+        <span style="display:{expression/vlcn_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/vlcn_riskr_value}
+    </div>
+  </div>
+  <div style="background-color:{expression/wfir_riskr_bgColor}; border-radius: 5px; margin: 10px; border: 1px solid #4c4c4c; flex-grow:1; order:{expression/wfir_riskr_order}">
+    <div style=" background: #4c4c4c; color: white; text-align: center; padding: 3px;">
+      <strong>Wildfire Risk</strong>
+      <div style="display:{expression/wfir_riskr_display};">
+        <div style="display:{expression/wfir_frqDisplay};">
+          <p>{expression/wfir_evnts} recorded events</p>
+          <p>{expression/wfir_afreq} {expression/wfir_frqUnits} per year</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%; background-color:#ffffff; text-align:right; font-size:0.95em; display:{expression/wfir_riskr_display};">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Exposure Information</th>
+        </tr>
+        <tr style="{expression/wfir_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Population</td>
+          <td>{expression/wfir_expp}</td>
+        </tr>
+        <tr style="{expression/wfir_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/wfir_exppe}</td>
+        </tr>
+        <tr style="{expression/wfir_popDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Buildings</td>
+          <td>${expression/wfir_expb}</td>
+        </tr>
+        <tr style="{expression/wfir_agDisplay}">
+          <td style="text-align:left;">&emsp;Exposed Agriculture</td>
+          <td>${expression/wfir_expa}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Historic Loss Ratio</th>
+        </tr>
+        <tr style="{expression/wfir_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/wfir_hlrp}%</td>
+        </tr>
+        <tr style="{expression/wfir_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>{expression/wfir_hlrb}%</td>
+        </tr>
+        <tr style="{expression/wfir_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>{expression/wfir_hlra}%</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{wfir_hlrr}</td>
+        </tr>
+        <tr>
+          <th colspan="2" style="background:#a7a7a7; text-align:left; border-top: 1px solid #4c4c4c">Expected Annual Loss</th>
+        </tr>
+        <tr style="{expression/wfir_popDisplay}">
+          <td style="text-align:left;">&emsp;Population</td>
+          <td>{expression/wfir_ealp}</td>
+        </tr>
+        <tr style="{expression/wfir_popDisplay}">
+          <td style="text-align:left;">&emsp;... Population Equiv.</td>
+          <td>${expression/wfir_ealpe}</td>
+        </tr>
+        <tr style="{expression/wfir_popDisplay}">
+          <td style="text-align:left;">&emsp;Buildings</td>
+          <td>${expression/wfir_ealb}</td>
+        </tr>
+        <tr style="{expression/wfir_agDisplay}">
+          <td style="text-align:left;">&emsp;Agriculture</td>
+          <td>${expression/wfir_eala}</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">&emsp;Rating</td>
+          <td>{wfir_ealr}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="padding: 5px; text-align: center; color:{expression/wfir_riskr_color}">
+        <span style="display:{expression/wfir_riskr_display}; whitespace:nowrap">Risk Rating: </span>{expression/wfir_riskr_value}
+    </div>
+  </div>
+</div>
+<div style="margin-top:6px; font-size:0.85rem">
+  <p>
+    Data Source: United States. Federal Emergency Management Agency. <i>National Risk Index for Natural Hazards (NRI)</i>, (Released {nri_ver})
+  </p>
+  <p style="margin-top:3px;"> 
+    To learn more about this data, read the <a href="https://hazards.geoplatform.gov/portal/apps/MapSeries/index.html?appid=ddf915a24fb24dc8863eed96bc3345f8">Story</a>
+    or go to <a href="https://www.fema.gov/flood-maps/products-tools/national-risk-index">FEMA's NRI page</a> to access the full documentation and data.
+  </p>
+</div>
