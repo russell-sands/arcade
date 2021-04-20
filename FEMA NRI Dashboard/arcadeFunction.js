@@ -169,7 +169,8 @@ function fmtNum (n) {
   var factored = Round(Number(wholePart) / factor, 1);
   // Handle when "round up" pushes us to another scale
   if (factored >= 1000) {
-    suffixKey += 1;
+    // Max out at 4
+    suffixKey = Min(4, suffixKey + 1);
     factored = Round(factored / 1000, 1);
   }
   // Get the output
