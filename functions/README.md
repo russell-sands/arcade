@@ -10,8 +10,8 @@ Useful when you have polygon features and want to summarize information from poi
 ## makeOrdinalText
 Useful when you want ordinal decorators on text. Option to add a "flavor" decorator. For example "lowest" would turn 2 -> "2nd lowest" and 1 -> "lowest".
 
-##shortenNumber
+## shortenNumber
 Shorten a number to a string representation with number prefixing. Also handle small non-zero numbers.
 
-##shortenDecimal
+## shortenDecimal
 Shorten a decimal to a set number of digits, and for small numbers distinguish between the minimum, below the minimum, and zero.
